@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Collapsible sidebar using Bootstrap 3</title>
+
+         <!-- Bootstrap CSS CDN -->
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="style.css">
+<style>
+.fa-pencil:before {
+    padding: 11px;
+    content: "\f040";}</style>
+    </head>
+    <body>
+
+
+
+        <div class="wrapper">
+            <!-- Sidebar Holder -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <a href="#"><img src="https://ditstekdemo.com/ee/assets/images/logo.svg" alt="" style="height: 100px;width: 150px;"></a>
+                                <!-- <h3>Bootstrap Sidebar</h3> -->
+                </div>
+
+                <ul class="list-unstyled components">
+                    <!-- <p></p> -->
+                    <li class="active">
+                        <a href="index1.html"><i class="fa fa-user-plus" aria-hidden="true"></i>&nbsp; Users</a>
+                        <!-- <ul class="collapse list-unstyled" id="homeSubmenu">
+                            <li><a href="#">Home 1</a></li>
+                            <li><a href="#">Home 2</a></li>
+                            <li><a href="#">Home 3</a></li>
+                        </ul> -->
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-users" aria-hidden="true"></i>&nbsp; Technician List</a>
+                        <!-- <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">Pages</a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                            <li><a href="#">Page 1</a></li>
+                            <li><a href="#">Page 2</a></li>
+                            <li><a href="#">Page 3</a></li>
+                        </ul> -->
+                    </li>
+                    <li>    
+                        <a href="JobFolder.html"><i class="fa fa-folder" aria-hidden="true"></i>&nbsp; Job Folder</a>
+                    </li>
+                    <li>
+                        <a href="JobVisitModule.html"><i class="fa fa-map" aria-hidden="true"></i>&nbsp;Job Visit Module</a>
+                    </li>
+                    <li>
+                        <a href="AssignTemplate.html"><i class="fa fa-tasks" aria-hidden="true"></i>&nbsp;Assign Template</a>
+                    </li>
+                    <li>
+                        <a href="Category.html"><i class="fa fa-cube" aria-hidden="true"></i>&nbsp; Manage Categories</a>
+                    </li>
+                    <li>
+                        <a href="SubCategory.html"><i class="fa fa-cubes" aria-hidden="true"></i>&nbsp; SubCategories</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-id-card" aria-hidden="true"></i>&nbsp;Job Agreement</a>
+                    </li>
+                    <li>
+                        <a href="Supplier.html"><i class="fa fa-truck" aria-hidden="true"></i>&nbsp; Supplier List</a>
+                    </li>
+                    <li>
+                        <a href="ZipCode.html"><i class="fa fa-fax" aria-hidden="true"></i>&nbsp; Zipcode Management</a>
+                    </li>
+                    <li>
+                        <a href="Pricing.html"><i class="fa fa-book" aria-hidden="true"></i>&nbsp; Pricing</a>
+                    </li>
+                    <li>
+                        <a href="Customer.html"><i class="fa fa-user-secret" aria-hidden="true"></i>&nbsp; Customer List</a>
+                    </li>
+                    
+                </ul>
+
+                <!-- <ul class="list-unstyled CTAs">
+                    <li><a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a></li>
+                    <li><a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a></li>
+                </ul> -->
+            </nav>
+
+            <!-- Page Content Holder -->
+            <div id="content" style="width:100% ;">
+
+                <nav class="navbar navbar-default" style="margin-top: -20px;">
+                    <div class="container-fluid" >
+
+                        <div class="navbar-header">
+                            <button type="button" id="sidebarCollapse" class="navbar-btn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </div>  
+                        
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="log_out" >
+                                    <a href="login.html">
+                                      <i class="bx bx-log-out" style="color: aliceblue;"></i>
+                                      <span class="links_name" style="color: aliceblue;font-size: large;">Logout</span>
+                                    </a>
+                                  </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <h3>Users</h3>
+                <div class="main">
+  
+                    <!-- Actual search box -->
+                    <div class="form-group has-feedback has-search">
+                      <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                      <input type="text" class="form-control" placeholder="Search By Name,Category & SubCategory">
+                    </div>
+                    
+                  </div>
+                <div class="text-right" id="add_btn">
+                    <button type="button" class="btn btn-primary mt-5 mt-5 mr-3 ml auto" id="add_button"
+                      data-toggle="modal"
+                      data-target="#exampleModal"
+                      style="margin-top: -165px;"   
+                     >+ New User</button>
+                    </div>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true" style="opacity: 10; ">
+                    <div id="modal-body-custom" class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">
+                                    Enter Following details
+                                </h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body" id="modal1">
+                                <form id="myForm">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-4">
+                                            <label for="inputEmail4">First Name</label>
+                                            <input type="text" class="form-control" id="fname" placeholder="First Name" />
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="inputEmail4">Last Name</label>
+                                            <input type="text" class="form-control" id="lname" placeholder="Last Name" />
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="inputPassword4">Email</label>
+                                            <input type="text" class="form-control" id="email"
+                                                placeholder="Enter the Email" />
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col-md-4">
+                                                <label for="inputAddress2">Phone</label>
+                                                <input type="text" class="form-control" id="phone"
+                                                    placeholder="Enter the phone" />
+                                            </div>
+                                            <div class="form-group col-md-4 ">
+                                                <label for="gender">User Type</label>
+                                                <select class="form-control" name="role" id="usertype" >
+                                                    <option value="0">--Select--</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-md-4">
+                                                <label for="inputAddress">User Name </label>
+                                                <input type="text" class="form-control" id="username"
+                                                    placeholder="Enter the Username" />
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-4">
+                                                    <label for="inputAddress2">Password</label>
+                                                    <input type="text" class="form-control" id="pass"
+                                                        placeholder="Enter the Password" />
+                                                </div>
+                                                <div class="form-group col-md-6 ">
+                                                    <label for="inputZip">Attach Passport Size Image</label>
+                                                    <input type="file" class="form-control" id="image"
+                                                        placeholder="state" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary" onclick="AddUser()">
+                                    Submit
+                                </button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                             
+           <div class="container">
+               <div class="row justify-content-center my-5">
+                   <div class="col-md-12">
+                      
+           
+                       <table class="table">
+                           <thead class="thead-light">
+                               <tr>
+                                   <th scope="col">Name</th>
+                                   <!-- <th scope="col">Last Name</th> -->
+                                   <th scope="col">Email</th>
+                                   <th scope="col">Username</th>
+                                   <!-- <th scope="col">Password</th> -->
+                                   <th scope="col">Phone</th>
+                                   <th scope="col">Role Type</th>
+                                   <th scope="col">Active/Inactive</th>
+                                   <th scope="col">Action</th>
+                               </tr>
+                           </thead>
+                           <tbody id = "emp1">
+                             
+                               <!-- <tr>
+                                   <th scope="row">1</th>
+                                   <td>jyoti</td>
+                                   <td>Mishra</td>
+                                   <td>1234567895</td>
+                                   <td>jyoti@gmail.com</td>
+                                   
+                                   <td> 
+                                       <button type="button" class="btn mx-1" name="edit"  data-toggle="modal"
+                       data-target="#exampleModal">
+                                           <i class="fa fa-pencil text-warning"></i>
+                                       </button>
+                                        <button type="button" class="btn mx-2" name="delete">
+                                           <i class="fa fa-trash text-danger"></i>
+                                       </button>
+                                        <button type="button" class="btn mx-2" name="delete" data-toggle="modal"
+                       data-target="#exampleModalCenter">
+                                           <i class="fa fa-eye text-danger"></i>
+                                       </button>
+                                   
+                                   </td>
+                               </tr> -->
+                             
+                           </tbody>
+                       </table>
+                   </div>
+               </div>
+           </div>
+</div></div>
+
+                <!-- <h2>Collapsible Sidebar Using Bootstrap 3</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                <div class="line"></div>
+
+                <h2>Lorem Ipsum Dolor</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                <div class="line"></div>
+
+                <h2>Lorem Ipsum Dolor</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                <div class="line"></div>
+
+                <h3>Lorem Ipsum Dolor</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
+   
+
+
+
+
+
+        <!-- jQuery CDN -->
+         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+         <!-- Bootstrap Js CDN -->
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+         <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+   
+    <script src="GetUser.js"></script>
+
+         <script type="text/javascript">
+             $(document).ready(function () {
+                 $('#sidebarCollapse').on('click', function () {
+                     $('#sidebar').toggleClass('active');
+                     $(this).toggleClass('active');
+                 });
+             });
+         </script>
+         <script type="text/javascript">
+
+$('#myForm').submit(function() {
+
+// submission stuff
+
+$('#exampleModal').modal('hide');
+return false;
+});
+         </script>
+    </body>
+    
+
+</html>
